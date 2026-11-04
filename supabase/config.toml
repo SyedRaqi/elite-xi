@@ -1,0 +1,4 @@
+project_id = "elite-xi"
+
+[functions.global-roster]
+verify_jwt = true
