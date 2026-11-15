@@ -1,0 +1,53 @@
+.brand {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  flex: none;
+}
+
+.brand-mark {
+  display: block;
+  width: 42px;
+  height: 48px;
+  flex: none;
+  filter: drop-shadow(0 0 12px rgba(199, 255, 53, .12));
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.brand:hover .brand-mark {
+  filter: drop-shadow(0 0 13px rgba(199, 255, 53, .36));
+  transform: translateY(-2px);
+}
+
+.brand > .brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font: inherit;
+}
+
+.brand-wordmark {
+  font: 800 28px/.84 var(--condensed);
+  letter-spacing: .025em;
+  white-space: nowrap;
+}
+
+.brand-accent { color: var(--lime); }
+
+.brand .brand-copy small {
+  margin-top: 7px;
+  color: #92958b;
+  font-size: 7px;
+  letter-spacing: .19em;
+  white-space: nowrap;
+}
+
+.footer-top .brand { margin-right: 8px; }
+
+@media (max-width: 700px) {
+  .brand { gap: 8px; }
+  .brand-mark { width: 35px; height: 41px; }
+  .brand-wordmark { font-size: 24px; }
+  .brand .brand-copy small { font-size: 6px; letter-spacing: .16em; }
+}

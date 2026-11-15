@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" fill="none">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#364339"/><stop offset="1" stop-color="#101611"/></linearGradient>
+    <linearGradient id="grass" x2="0" y2="1"><stop stop-color="#40533d"/><stop offset="1" stop-color="#17251c"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#e1ff9d" stop-opacity=".8"/><stop offset="1" stop-color="#d3f36b" stop-opacity="0"/></radialGradient>
+    <pattern id="crowd" width="22" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="5" r="2" fill="#cbd2b1" fill-opacity=".4"/><circle cx="15" cy="10" r="2" fill="#d3f36b" fill-opacity=".34"/></pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1800v550H0z"/>
+  <ellipse cx="330" cy="208" rx="300" ry="260" fill="url(#glow)" opacity=".55"/>
+  <ellipse cx="1480" cy="180" rx="300" ry="260" fill="url(#glow)" opacity=".45"/>
+  <path fill="#202c23" d="M0 270 295 200l605 115 610-130 290 80v345H0z"/>
+  <path fill="url(#crowd)" d="M0 280 300 216l600 112 608-127 292 69v266H0z"/>
+  <path stroke="#a9b694" stroke-opacity=".4" stroke-width="8" d="m0 380 295-70 605 103 610-115 290 65M0 455l295-66 605 91 610-102 290 57"/>
+  <path fill="url(#grass)" d="M0 540h1800v460H0z"/>
+  <path fill="#e1e9d1" fill-opacity=".07" d="M0 570h900v430H0z"/>
+  <path stroke="#d4dfca" stroke-opacity=".62" stroke-width="4" d="M900 540v460M1240 540v460M1240 665h-173v190h173M1460 540v460"/>
+  <circle cx="900" cy="770" r="115" stroke="#d4dfca" stroke-opacity=".62" stroke-width="4"/>
+  <path fill="#101611" fill-opacity=".5" d="M0 0h1800v1000H0z"/>
+  <path fill="#d3f36b" fill-opacity=".2" d="M0 965h1800v35H0z"/>
+</svg>

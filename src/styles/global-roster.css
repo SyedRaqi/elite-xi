@@ -1,0 +1,130 @@
+.global-roster-manager { margin-top: 40px; }
+.global-roster-manager > .section-header { margin-bottom: 30px; }
+.roster-setup-note { padding: 20px; border: 1px solid var(--line); background: var(--panel); }
+.roster-setup-note h2 { margin: 5px 0 10px; font: 600 25px/1 var(--condensed); }
+.roster-setup-note > p:not(.eyebrow) { max-width: 760px; color: #b7bbb0; font-size: 11px; line-height: 1.8; }
+.roster-metrics { display: grid; grid-template-columns: repeat(3, 1fr); margin: 25px 0 42px; border: 1px solid var(--line); background: var(--panel); }
+.roster-metrics article { min-width: 0; padding: 21px 23px; border-right: 1px solid var(--line); }
+.roster-metrics article:last-child { border-right: 0; }
+.roster-metrics article > span, .roster-metrics article small { display: block; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; }
+.roster-metrics article b { display: block; margin: 8px 0 3px; color: var(--lime); font: 600 38px/.95 var(--condensed); }
+.roster-metrics article small { font-size: 10px; font-weight: 400; letter-spacing: 0; }
+.roster-import-panel, .roster-directory-panel, .roster-history-panel, .roster-progress-panel { margin-top: 25px; padding: 24px; border: 1px solid var(--line); background: var(--panel); }
+.roster-panel-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.roster-panel-title h3 { margin: 5px 0 0; font: 600 25px/1 var(--condensed); letter-spacing: .02em; }
+.secure-label { display: inline-flex; align-items: center; gap: 7px; color: #b7c58c; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
+.secure-label svg { color: var(--lime); }
+.roster-selectors { display: grid; grid-template-columns: minmax(0, 1fr); gap: 15px; max-width: 620px; }
+.roster-selectors select { width: 100%; min-height: 43px; padding: 0 11px; border: 1px solid var(--line); border-radius: 0; outline: 0; color: #f3f5ec; background: #0c0f0b; font-size: 11px; }
+.roster-selectors select:focus, .roster-edit-dialog input:focus { border-color: var(--lime); }
+.current-squad-tag { display: inline-block; margin-top: 7px; color: var(--lime); font-size: 7px; font-weight: 800; letter-spacing: .12em; }
+.roster-selectors select option { color: #f3f5ec; background: #11140f; }
+.roster-inline-state { display: flex; align-items: center; gap: 8px; margin: 17px 0 0; color: var(--muted); font-size: 11px; }
+.roster-alert { display: flex; align-items: flex-start; gap: 9px; margin: 16px 0 0; padding: 11px 13px; font-size: 11px; line-height: 1.6; }
+.roster-alert svg { flex: 0 0 auto; margin-top: 1px; }
+.roster-alert.error { border: 1px solid rgba(232, 109, 87, .28); color: #f2a28f; background: rgba(232, 109, 87, .08); }
+.roster-alert.success { border: 1px solid rgba(199, 255, 53, .2); color: #d7ed9f; background: rgba(199, 255, 53, .06); }
+.roster-clubs { margin-top: 24px; }
+.roster-club-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 12px; }
+.roster-club-heading .eyebrow { margin-bottom: 4px; }
+.roster-club-heading b { color: #dce0d4; font-size: 11px; }
+.text-button { display: inline-flex; align-items: center; gap: 6px; padding: 3px 0; border: 0; color: var(--lime); background: transparent; font-size: 9px; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
+.text-button:disabled { opacity: .4; cursor: not-allowed; }
+.roster-club-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-height: 260px; overflow: auto; border: 1px solid var(--line); }
+.roster-club-option { display: flex; min-width: 0; min-height: 47px; align-items: center; gap: 9px; padding: 7px 10px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #dfe1d9; font-size: 10px; cursor: pointer; }
+.roster-club-option:hover { background: rgba(199, 255, 53, .04); }
+.roster-club-option input { width: 13px; height: 13px; flex: 0 0 auto; accent-color: var(--lime); }
+.roster-club-option img, .club-placeholder { width: 25px; height: 25px; flex: 0 0 auto; object-fit: contain; }
+.club-placeholder { display: grid; place-items: center; color: var(--lime); background: #20251b; }
+.roster-club-option > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.roster-import-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.roster-import-actions button, .roster-edit-dialog > button { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 8px; padding: 0 15px; font-size: 9px; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
+.roster-import-actions button:disabled, .roster-edit-dialog button:disabled { opacity: .42; cursor: not-allowed; }
+.roster-import-actions .button-outline { border: 1px solid var(--line); color: #e4e6dc; background: transparent; }
+.roster-import-actions .button-outline:hover { border-color: var(--lime); }
+.roster-progress-panel { border-color: rgba(199, 255, 53, .28); }
+.roster-progress-copy, .roster-progress-stats { display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 9px; }
+.roster-progress-copy b { color: var(--lime); letter-spacing: .08em; }
+.roster-progress-panel progress { width: 100%; height: 5px; margin: 13px 0 9px; appearance: none; border: 0; background: #292d24; }
+.roster-progress-panel progress::-webkit-progress-bar { background: #292d24; }
+.roster-progress-panel progress::-webkit-progress-value { background: var(--lime); }
+.roster-progress-panel progress::-moz-progress-bar { background: var(--lime); }
+.roster-progress-stats { color: #c2c6bb; }
+.roster-club-results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px 15px; max-height: 190px; overflow: auto; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--line); list-style: none; }
+.roster-club-results li { display: grid; grid-template-columns: 15px minmax(70px, .7fr) minmax(100px, 1.4fr); align-items: start; gap: 7px; min-width: 0; font-size: 9px; }
+.roster-club-results li.passed svg { color: var(--lime); }
+.roster-club-results li.failed svg { color: #ed8b72; }
+.roster-club-results li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.roster-club-results li small { color: var(--muted); overflow-wrap: anywhere; }
+.roster-directory-panel { margin-top: 32px; }
+.record-count { color: var(--muted); font-size: 9px; letter-spacing: .1em; }
+.roster-search { width: min(390px, 100%); margin-bottom: 15px; }
+.roster-data-table { min-width: 760px; }
+.roster-data-table td { vertical-align: middle; }
+.roster-player-cell { display: flex; align-items: center; gap: 9px; min-width: 170px; }
+.roster-player-cell img { width: 33px; height: 39px; object-fit: cover; background: #242a20; }
+.roster-player-cell b, .roster-player-cell small, .table-subtext { display: block; }
+.roster-player-cell small, .table-subtext { margin-top: 3px; color: var(--muted); font-size: 8px; }
+.roster-pagination { display: flex; align-items: center; justify-content: space-between; margin-top: 15px; color: var(--muted); font-size: 9px; letter-spacing: .1em; }
+.roster-pagination > div { display: flex; gap: 6px; }
+.roster-pagination button, .roster-edit-dialog .roster-panel-title > button { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid var(--line); color: #e7e9e1; background: transparent; cursor: pointer; }
+.roster-pagination button:disabled { opacity: .35; cursor: not-allowed; }
+.roster-history-panel { margin-top: 32px; }
+.roster-history-list { border-top: 1px solid var(--line); }
+.roster-history-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 11px 25px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.history-main { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+.history-main > b { font-size: 11px; }
+.history-main > small { color: var(--muted); font-size: 9px; }
+.job-badge { padding: 4px 6px; font-size: 7px; font-weight: 700; letter-spacing: .08em; background: rgba(255,255,255,.07); }
+.job-badge.completed { color: var(--lime); background: rgba(199,255,53,.09); }
+.job-badge.failed, .job-badge.completed_with_errors { color: #f19a81; background: rgba(232,109,87,.09); }
+.job-badge.running { color: #9dc9f2; background: rgba(92,162,223,.1); }
+.history-summary { display: flex; justify-content: flex-end; gap: 16px; color: #b5b8ae; font-size: 9px; }
+.retry-button { display: inline-flex; grid-column: 2; justify-self: end; align-items: center; gap: 7px; padding: 8px 10px; border: 1px solid var(--line); color: #f0a28c; background: transparent; font-size: 8px; letter-spacing: .06em; cursor: pointer; }
+.retry-button:disabled { opacity: .4; cursor: not-allowed; }
+.history-details { grid-column: 1 / -1; color: var(--muted); font-size: 9px; }
+.history-details summary { width: fit-content; color: var(--lime); cursor: pointer; }
+.history-details ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px 20px; max-height: 180px; overflow: auto; margin: 10px 0 0; padding: 10px; border: 1px solid var(--line); list-style: none; }
+.history-details li { display: flex; justify-content: space-between; gap: 12px; color: #dce0d5; }
+.history-details li small { color: var(--muted); text-align: right; overflow-wrap: anywhere; }
+.history-details li.failed, .history-details li.failed small { color: #f19a81; }
+.roster-empty-history { margin: 20px 0 2px; color: var(--muted); font-size: 11px; }
+.roster-demo-note { margin: 18px 0 0; color: var(--muted); font-size: 9px; line-height: 1.6; }
+.roster-modal-backdrop { position: fixed; z-index: 80; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0,0,0,.76); }
+.roster-edit-dialog { width: min(480px, 100%); max-height: 90vh; overflow-y: auto; padding: 25px; border: 1px solid var(--line); background: #11140f; box-shadow: 0 20px 80px rgba(0,0,0,.4); }
+.roster-edit-dialog .roster-panel-title { align-items: center; }
+.roster-edit-dialog .roster-panel-title > button { flex: 0 0 auto; }
+.roster-edit-dialog .form-field { display: block; margin: 15px 0; }
+.roster-edit-dialog .form-field > span { display: block; margin-bottom: 7px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .12em; }
+.roster-edit-dialog input { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid var(--line); outline: 0; color: #f3f5ec; background: #0b0d0a; font-size: 11px; }
+.roster-edit-dialog > button { width: 100%; margin-top: 10px; border: 0; color: #10120b; background: var(--lime); }
+.spin { animation: roster-spin .8s linear infinite; }
+@keyframes roster-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 760px) {
+  .roster-import-panel, .roster-directory-panel, .roster-history-panel, .roster-progress-panel { padding: 17px; }
+  .roster-club-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .roster-history-item { grid-template-columns: 1fr; }
+  .history-summary { justify-content: flex-start; }
+  .retry-button { grid-column: 1; justify-self: start; }
+  .roster-club-results { grid-template-columns: 1fr; }
+  .history-details ul { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .roster-metrics article { padding: 15px 12px; }
+  .roster-metrics article > span { font-size: 7px; }
+  .roster-metrics article b { font-size: 30px; }
+  .roster-metrics article small { font-size: 8px; line-height: 1.4; }
+  .roster-selectors { grid-template-columns: 1fr; gap: 8px; }
+  .roster-panel-title { align-items: flex-start; }
+  .secure-label { max-width: 105px; font-size: 7px; }
+  .roster-club-heading { align-items: flex-start; }
+  .roster-club-option { padding: 7px 5px; gap: 5px; font-size: 9px; }
+  .roster-club-option img, .club-placeholder { width: 21px; height: 21px; }
+  .roster-import-actions { flex-direction: column; }
+  .roster-import-actions button { width: 100%; }
+  .roster-progress-copy, .roster-progress-stats { flex-direction: column; gap: 6px; }
+  .roster-progress-copy b { line-height: 1.5; }
+  .history-main { align-items: flex-start; }
+  .history-main > small { flex-basis: 100%; }
+}

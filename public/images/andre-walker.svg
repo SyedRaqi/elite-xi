@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" fill="none">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#a27c64"/><stop offset="1" stop-color="#4a392f"/></linearGradient><linearGradient id="shirt" x2="0" y2="1"><stop stop-color="#e0a37b"/><stop offset="1" stop-color="#a3553d"/></linearGradient></defs>
+  <path fill="url(#bg)" d="M0 0h720v900H0z"/><path fill="#f3d9bd" fill-opacity=".12" d="M0 0h180v900H0z"/><circle cx="550" cy="190" r="225" fill="#ffdfb2" fill-opacity=".12"/><path stroke="#f2dec5" stroke-opacity=".23" stroke-width="2" d="M0 620h720M90 0v900M630 0v900"/>
+  <path fill="#242322" d="M181 900c9-165 67-266 179-278 112 12 170 113 179 278H181Z"/><path fill="url(#shirt)" d="m282 635 78-32 78 32 91 265H191l91-265Z"/><path stroke="#f1d8c6" stroke-opacity=".62" stroke-width="7" d="m282 635 78 47 78-47"/><path fill="#875e45" d="M295 417c5 72 31 116 65 116s60-44 65-116c-26 16-46 22-65 22s-39-6-65-22Z"/><path fill="#1e201f" d="M281 367c-18-95 14-174 79-174 73 0 100 79 79 174-15-40-44-65-83-70-31 22-50 47-75 70Z"/><path fill="#252725" d="M287 300c26-47 57-68 103-64"/>
+</svg>
