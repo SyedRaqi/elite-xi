@@ -22,16 +22,17 @@ For a new project, run `schema.sql` in the Supabase SQL Editor first. Then run t
 3. `migrations/20261104120000_ensure_football_squad_cache.sql`
 4. `migrations/20261104150000_current_squad_imports.sql`
 5. `migrations/20261104160000_current_club_cache.sql`
+6. `migrations/20261104170000_reconcile_current_squad_roster.sql`
 
 The migrations add external player IDs and metadata, competition associations, import history, database indexes, published-player read policies, and paginated directory/search functions. The external API ID has a unique index; imports upsert against it to avoid duplicates.
 
-For an already linked project that tracks these migrations with the Supabase CLI, apply pending migrations from the project root with:
+For an already linked project with matching migration history, preview pending migrations from the project root with:
 
 ```sh
-supabase db push
+supabase db push --dry-run --remote
 ```
 
-If applying SQL manually, run both `20261104150000_current_squad_imports.sql` and `20261104160000_current_club_cache.sql` after the earlier roster migrations. Do not deploy the updated function until these migrations have been applied, because current-squad imports use the tables they create.
+Only run `supabase db push --remote` after confirming the preview contains exactly the intended migrations. For a project where migrations were applied manually in SQL Editor or remote/local history differs, first reconcile the migration ledger and compare the production schema; do not mark migrations applied or reverted based only on table existence. The forward-only reconciliation migration preserves player rows, historical competition rows and cache rows while ensuring current-squad columns, associations, cache, directory functions and permissions. Apply it only after the preceding roster tables from migration `20261103154334` exist.
 
 ## 3. Deploy the secure API-Football proxy
 

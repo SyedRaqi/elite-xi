@@ -1,0 +1,189 @@
+/* Route scenes based on the ELITE XI environment board. Keep the scene behind
+   the existing page content so cards, controls and Supabase data remain intact. */
+.route-page[data-page] {
+  --scene-image: none;
+  --scene-glow: rgba(36, 160, 255, .22);
+  position: relative;
+  isolation: isolate;
+  background-color: #050b13;
+  background-image:
+    linear-gradient(180deg, rgba(3, 8, 15, .34), rgba(3, 8, 15, .74) 42%, #050b13 100%),
+    radial-gradient(ellipse at 76% 8%, var(--scene-glow), transparent 42%),
+    var(--scene-image);
+  background-position: center top, center top, center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 850px, 100% 780px;
+}
+
+/* Home: the signature night stadium is already rendered in its hero. Continue
+   the same stadium environment softly below the hero instead of flattening out. */
+.route-page[data-page="home"] {
+  background-image:
+    linear-gradient(180deg, transparent 0 12%, rgba(4, 10, 17, .72) 44%, #050a12 100%),
+    url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2400&q=85');
+  background-position: center top;
+  background-size: 100% 1300px, 100% 1300px;
+}
+
+/* Players: real football tunnel from Unsplash, reinforced with a perspective
+   arch and blue floor lights for the reference's walk-out atmosphere. */
+.route-page[data-page="players"] {
+  --scene-glow: rgba(0, 165, 255, .32);
+  --scene-image: url('https://images.unsplash.com/photo-1740906792991-6e4414eb4e58?auto=format&fit=crop&fm=jpg&q=82&w=2400');
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 16, .2), rgba(2, 8, 16, .54) 45%, #050b13 100%),
+    radial-gradient(ellipse at 50% 5%, rgba(4, 177, 255, .35), transparent 49%),
+    var(--scene-image);
+  background-size: 100% 100%, cover, cover;
+  background-attachment: scroll, fixed, fixed;
+}
+.route-page[data-page="players"] .player-directory {
+  background: transparent;
+}
+.route-page[data-page="players"] .directory-hero {
+  background:
+    linear-gradient(90deg, rgba(3, 10, 19, .66), rgba(3, 10, 19, .18) 53%, rgba(3, 10, 19, .58)),
+    linear-gradient(0deg, rgba(3, 9, 16, .4), transparent 75%),
+    url('https://images.unsplash.com/photo-1740906792991-6e4414eb4e58?auto=format&fit=crop&fm=jpg&q=82&w=2400') center 53% / cover;
+  border-bottom: 1px solid rgba(69, 190, 255, .28);
+  box-shadow: inset 0 -55px 70px rgba(3, 9, 16, .35);
+}
+
+/* Profiles: the actual player portrait remains in the profile component. A
+   floodlit stadium and gold/blue spotlight make it read like a hero showcase. */
+.route-page[data-page="profile"] {
+  --scene-glow: rgba(130, 80, 255, .27);
+  --scene-image: url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?auto=format&fit=crop&w=2400&q=85');
+  background-image:
+    linear-gradient(180deg, rgba(4, 8, 16, .3), rgba(5, 8, 16, .82) 55%, #050b13 100%),
+    radial-gradient(ellipse at 72% 23%, rgba(232, 177, 91, .2), transparent 36%),
+    radial-gradient(ellipse at 18% 14%, rgba(105, 74, 255, .24), transparent 42%),
+    var(--scene-image);
+  background-size: 100% 100%, cover, cover, cover;
+  background-attachment: scroll, fixed, fixed, fixed;
+}
+.route-page[data-page="profile"] .player-profile { background: transparent; }
+.route-page[data-page="profile"] .profile-hero {
+  isolation: isolate;
+  background-color: rgba(5, 10, 18, .22);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, .4), inset 0 0 100px rgba(22, 117, 207, .12);
+}
+.route-page[data-page="profile"] .profile-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background: radial-gradient(ellipse at 72% 35%, rgba(44, 161, 255, .2), transparent 42%), linear-gradient(115deg, transparent 45%, rgba(234, 184, 100, .12), transparent 72%);
+}
+
+/* Matches: floodlit pitch with a green/cyan horizon. */
+.route-page[data-page="matches"] {
+  --scene-glow: rgba(23, 215, 190, .23);
+  --scene-image: url('https://images.unsplash.com/photo-1546608235-3310a2494cdf?auto=format&fit=crop&w=2400&q=85');
+  background-image:
+    linear-gradient(180deg, rgba(3, 10, 16, .22), rgba(3, 10, 16, .72) 42%, #050b13 100%),
+    radial-gradient(ellipse at 50% 18%, rgba(60, 255, 188, .17), transparent 48%),
+    var(--scene-image);
+  background-size: 100% 100%, cover, cover;
+  background-attachment: scroll, fixed, fixed;
+}
+.route-page[data-page="matches"] .match-card {
+  background: linear-gradient(135deg, rgba(7, 30, 39, .91), rgba(5, 14, 24, .9));
+  border-color: rgba(86, 225, 202, .22);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .28), inset 0 1px rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+}
+
+/* Statistics: holographic data arena over a night pitch. The fine grid, pitch
+   rings and cyan/purple beams are CSS layers, so no 3D runtime is needed. */
+.route-page[data-page="statistics"] {
+  --scene-glow: rgba(0, 212, 255, .3);
+  --scene-image: url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?auto=format&fit=crop&w=2400&q=85');
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 17, .33), rgba(3, 9, 18, .78) 48%, #050b13 100%),
+    radial-gradient(ellipse at 50% 15%, rgba(0, 236, 255, .26), transparent 37%),
+    radial-gradient(ellipse at 88% 23%, rgba(111, 64, 255, .22), transparent 40%),
+    var(--scene-image);
+  background-size: 100% 100%, cover, cover, cover;
+  background-position: center top;
+  background-attachment: scroll, fixed, fixed, fixed;
+}
+.route-page[data-page="statistics"] .page-masthead {
+  background: linear-gradient(90deg, rgba(3, 9, 18, .65), rgba(3, 9, 18, .18) 70%, rgba(3, 9, 18, .5));
+  border-bottom-color: rgba(70, 201, 255, .2);
+}
+.route-page[data-page="statistics"]::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  opacity: .56;
+  background-image:
+    linear-gradient(rgba(69, 199, 255, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 199, 255, .075) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 12%, transparent 0 21%, rgba(66, 215, 255, .22) 21.1% 21.22%, transparent 21.35% 34%, rgba(120, 89, 255, .16) 34.1% 34.22%, transparent 34.35%),
+    linear-gradient(112deg, transparent 34%, rgba(42, 216, 255, .12) 48%, transparent 55%);
+  background-size: 46px 46px, 46px 46px, 100% 870px, 100% 720px;
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+  mask-image: linear-gradient(180deg, #000 0, rgba(0,0,0,.65) 48%, transparent 100%);
+  animation: arena-scan 18s ease-in-out infinite alternate;
+}
+.route-page[data-page="statistics"] > * { position: relative; z-index: 1; }
+.route-page[data-page="statistics"] .chart-card {
+  background: linear-gradient(145deg, rgba(5, 23, 40, .9), rgba(6, 12, 25, .88));
+  border: 1px solid rgba(72, 199, 255, .23);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .3), inset 0 1px rgba(207, 246, 255, .07), 0 0 26px rgba(0, 192, 255, .045);
+  backdrop-filter: blur(14px);
+}
+@keyframes arena-scan { from { background-position: 0 0, 0 0, center 0, 38% 0; } to { background-position: 0 18px, 18px 0, center 20px, 62% 0; } }
+
+/* Media and admin retain distinct warm gallery / cool command-centre moods. */
+.route-page[data-page="media"] {
+  --scene-glow: rgba(255, 146, 57, .21);
+  --scene-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=2400&q=85');
+  background-image: linear-gradient(180deg, rgba(7, 7, 12, .25), rgba(7, 8, 13, .78) 48%, #050b13 100%), radial-gradient(ellipse at 80% 8%, rgba(255, 132, 56, .2), transparent 42%), var(--scene-image);
+  background-size: 100% 100%, cover, cover;
+  background-attachment: scroll, fixed, fixed;
+}
+.route-page[data-page="admin"] {
+  --scene-glow: rgba(44, 126, 255, .28);
+  --scene-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2400&q=85');
+  background-image: linear-gradient(180deg, rgba(3, 8, 16, .4), rgba(3, 9, 18, .86) 42%, #050b13 100%), radial-gradient(ellipse at 84% 10%, rgba(95, 51, 255, .19), transparent 43%), var(--scene-image);
+  background-size: 100% 100%, cover, cover;
+  background-attachment: scroll, fixed, fixed;
+}
+.route-page[data-page="matches"] .page-masthead,
+.route-page[data-page="media"] .page-masthead,
+.route-page[data-page="admin"] .page-masthead {
+  background: linear-gradient(100deg, rgba(4, 10, 18, .62), rgba(4, 10, 18, .2) 65%, rgba(4, 10, 18, .52));
+}
+.route-page[data-page="admin"] .admin-metrics article,
+.route-page[data-page="admin"] .roster-setup-note,
+.route-page[data-page="admin"] .roster-import-panel,
+.route-page[data-page="admin"] .roster-directory-panel,
+.route-page[data-page="admin"] .roster-history-panel,
+.route-page[data-page="admin"] .roster-progress-panel {
+  background: rgba(5, 18, 34, .88);
+  border-color: rgba(78, 166, 255, .21);
+  backdrop-filter: blur(12px);
+}
+
+.route-page[data-page]:not([data-page="home"]) .section { background-color: transparent; }
+.route-page[data-page="home"] .home-club-section,
+.route-page[data-page="home"] .home-match-section { background-color: rgba(4, 11, 19, .7); backdrop-filter: blur(3px); }
+
+@media (max-width: 760px) {
+  .route-page[data-page] { background-attachment: scroll; }
+  .route-page[data-page="players"],
+  .route-page[data-page="profile"],
+  .route-page[data-page="matches"],
+  .route-page[data-page="statistics"],
+  .route-page[data-page="media"],
+  .route-page[data-page="admin"] { background-attachment: scroll; }
+  .route-page[data-page="statistics"]::after { background-size: 34px 34px, 34px 34px, 100% 650px, 100% 560px; opacity: .4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-page[data-page="statistics"]::after { animation: none; }
+}

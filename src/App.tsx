@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { PlayerStoreProvider } from './data/PlayerStore'
+import './styles/route-backgrounds.css'
 const Home = lazy(() => import('./pages/Home').then((module) => ({ default: module.Home })))
 const Players = lazy(() => import('./pages/Players').then((module) => ({ default: module.Players })))
 const PlayerProfile = lazy(() => import('./pages/PlayerProfile').then((module) => ({ default: module.PlayerProfile })))
@@ -14,8 +15,13 @@ const Admin = lazy(() => import('./pages/Admin').then((module) => ({ default: mo
 
 function PageRoutes() {
   const location = useLocation()
+  const page = location.pathname === '/'
+    ? 'home'
+    : location.pathname.startsWith('/players/')
+      ? 'profile'
+      : location.pathname.split('/')[1] || 'home'
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [location.pathname])
-  return <AnimatePresence mode="wait"><motion.div key={location.pathname} className="route-page" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}><Suspense fallback={<div className="loading-state">LOADING ELITE XI…</div>}><Routes location={location}><Route path="/" element={<Home />} /><Route path="/players" element={<Players />} /><Route path="/players/:playerId" element={<PlayerProfile />} /><Route path="/matches" element={<Matches />} /><Route path="/statistics" element={<Statistics />} /><Route path="/media" element={<Media />} /><Route path="/admin" element={<Admin />} /><Route path="*" element={<Home />} /></Routes></Suspense></motion.div></AnimatePresence>
+  return <AnimatePresence mode="wait"><motion.div key={location.pathname} className="route-page" data-page={page} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}><Suspense fallback={<div className="loading-state">LOADING ELITE XI…</div>}><Routes location={location}><Route path="/" element={<Home />} /><Route path="/players" element={<Players />} /><Route path="/players/:playerId" element={<PlayerProfile />} /><Route path="/matches" element={<Matches />} /><Route path="/statistics" element={<Statistics />} /><Route path="/media" element={<Media />} /><Route path="/admin" element={<Admin />} /><Route path="*" element={<Home />} /></Routes></Suspense></motion.div></AnimatePresence>
 }
 
 function Layout() {

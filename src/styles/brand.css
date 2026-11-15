@@ -11,13 +11,65 @@
   width: 42px;
   height: 48px;
   flex: none;
-  filter: drop-shadow(0 0 12px rgba(199, 255, 53, .12));
-  transition: filter .25s ease, transform .25s ease;
+  overflow: visible;
+  filter: drop-shadow(0 5px 9px rgba(0, 0, 0, .38)) drop-shadow(0 0 10px rgba(77, 190, 255, .20));
+  transform-style: preserve-3d;
+  animation: elite-mark-float 5.6s ease-in-out infinite;
+  transition: filter .3s ease, transform .3s ease;
 }
 
 .brand:hover .brand-mark {
-  filter: drop-shadow(0 0 13px rgba(199, 255, 53, .36));
-  transform: translateY(-2px);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .42)) drop-shadow(0 0 17px rgba(103, 203, 255, .55));
+  transform: perspective(300px) rotateY(-12deg) rotateX(8deg) translateY(-3px) scale(1.06);
+}
+
+.brand-mark-halo {
+  transform-origin: 36px 40px;
+  transform-box: fill-box;
+  animation: elite-mark-orbit 14s linear infinite;
+}
+
+.brand-mark-shield {
+  transform-origin: 36px 40px;
+  transform-box: fill-box;
+  animation: elite-mark-breathe 4.8s ease-in-out infinite;
+}
+
+.brand-mark-crown {
+  transform-origin: 36px 20px;
+  transform-box: fill-box;
+  animation: elite-mark-crown 3.2s ease-in-out infinite;
+}
+
+.brand-mark-glint {
+  stroke-dasharray: 74;
+  stroke-dashoffset: 74;
+  animation: elite-mark-glint 5s ease-in-out infinite;
+}
+
+@keyframes elite-mark-float {
+  0%, 100% { transform: translateY(0) rotateX(0); }
+  50% { transform: translateY(-2px) rotateX(3deg); }
+}
+
+@keyframes elite-mark-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes elite-mark-breathe {
+  0%, 100% { filter: brightness(.96); }
+  50% { filter: brightness(1.2); }
+}
+
+@keyframes elite-mark-crown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.3px); }
+}
+
+@keyframes elite-mark-glint {
+  0%, 22% { stroke-dashoffset: 74; opacity: 0; }
+  48% { opacity: .9; }
+  68%, 100% { stroke-dashoffset: 0; opacity: 0; }
 }
 
 .brand > .brand-copy {
@@ -50,4 +102,18 @@
   .brand-mark { width: 35px; height: 41px; }
   .brand-wordmark { font-size: 24px; }
   .brand .brand-copy small { font-size: 6px; letter-spacing: .16em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark,
+  .brand-mark-halo,
+  .brand-mark-shield,
+  .brand-mark-crown,
+  .brand-mark-glint {
+    animation: none;
+  }
+
+  .brand:hover .brand-mark {
+    transform: none;
+  }
 }

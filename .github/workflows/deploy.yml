@@ -1,3 +1,4 @@
+
 name: Deploy ELITE XI to GitHub Pages
 
 on:
@@ -31,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build application
         run: npm run build
 
       - name: Configure Pages
